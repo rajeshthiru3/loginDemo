@@ -33,7 +33,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm">
-                                    <form action="dashboard.htm">
+                                    <form action="dashboard/dashboard.htm">
                                         <div class="form-group">
                                             <input type="email" class="form-control" id="emailAddressField" required
                                                 placeholder="Email Address">
@@ -85,7 +85,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <form action="dashboard/dashboard.htm">
+                        <form>
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row">
@@ -158,8 +158,8 @@
                             </div>
                         </div>
                         <div class="mx-auto modal-footer" style="text-align:center; width: 500px;">
-                            <button type="submit" class="btn btn-success btn-lg btn-block"
-                                onsubmit="alert('Sign Up Complete. Check your mail.')">Sign Up</button>
+                            <button type="button" class="btn btn-success btn-lg btn-block"
+                                onclick="alert('Sign Up Complete. Check your mail.')">Sign Up</button>
                         </div>
                     </form>
                     </div>

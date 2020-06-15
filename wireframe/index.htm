@@ -8,14 +8,55 @@
         .form-group>label {
             font-weight: 500;
         }
+
+        
+        ion-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+        #backButton {
+            display: none;
+        }
+
+        span {
+            vertical-align: middle;
+        }
     </style>
+
+    <script language="javascript">
+        function showPasswordForm(event) {
+            event.preventDefault();
+            registerColumn.style.display = "none";
+            emailEntryForm.style.display = "none";
+            passwordLabel.innerHTML = "Welcome back, " + emailAddressField.value + ".";
+            passwordEntryForm.style.display = "initial";
+            backButton.style.display = "inline-block";
+            titleText.innerHTML = "Back"
+        }
+
+        function showLoginForm() {
+            registerColumn.style.display = "initial";
+            emailEntryForm.style.display = "initial";
+            passwordLabel.innerHTML = "Enter your email ID:";
+            passwordEntryForm.style.display = "none";
+            backButton.style.display = "none";
+            titleText.innerHTML = "Log In"
+        }
+
+    </script>
+
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
 </head>
 
 <body>
     <div class="container">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-            Login
+            Log In
         </button>
 
         <!-- Modal -->
@@ -24,7 +65,10 @@
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="loginModalLongTitle">Login</h5>
+                        <h5 class="modal-title" id="loginModalLongTitle">
+                            <ion-icon id="backButton" name="caret-back-circle-outline" onclick="showLoginForm()"></ion-icon>
+                            <span id="titleText">Log In</span>
+                        </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -32,16 +76,25 @@
                     <div class="modal-body">
                         <div class="container">
                             <div class="row">
-                                <div class="col-sm">
-                                    <form action="dashboard/dashboard.htm">
+                                <div class="col-sm" id="emailEntryForm">
+                                    <form action="" onsubmit="showPasswordForm(event)">
                                         <div class="form-group">
+                                            <label for="emailAddressField">Enter your email ID:</label>
                                             <input type="email" class="form-control" id="emailAddressField" required
                                                 placeholder="Email Address">
                                         </div>
 
                                         <div class="form-group">
+                                            <button type="submit" class="btn btn-success" style="width: 30%">Next &#187;</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-sm" id="passwordEntryForm" style="display: none;">
+                                    <form action="dashboard/dashboard.htm">
+                                        <div class="form-group">
+                                            <label for="passwordField" id="passwordLabel"></label>
                                             <input type="password" class="form-control" id="passwordField" required
-                                                placeholder="Password" style="margin-top: 20px; padding: 10px;">
+                                                placeholder="Password">
                                         </div>
 
                                         <div class="form-group form-check">
@@ -49,14 +102,13 @@
                                             <label class="form-check-label" for="exampleCheck1">Remember me</label>
                                         </div>
 
-                                        <div class="form-group text-center">
-                                            <button type="submit" class="btn btn-success">Log In</button>
-                                            <button type="button" class="btn btn-link">Forgot Password</button>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success" style="width: 30%">Log In</button>
+                                            <button type="button" class="btn btn-link" data-target="#forgotPasswordModal" data-toggle="modal">Forgot Password</button>
                                         </div>
                                     </form>
-
                                 </div>
-                                <div class="col-sm text-center">
+                                <div class="col-sm text-center" id="registerColumn">
                                     Register now for free!
                                     <div class="form-group text-center">
                                         <button type="button" id="registerButton" class="mt-3 btn btn-dark"
@@ -165,6 +217,28 @@
                     </div>
             </div>
         </div>
+
+        <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Forgot Password</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form class="centerbox form-group">
+                        <label for="fpEmailAddress">Enter the email address below to reset password:</label>
+                        <input type="email" id="fpEmailAddress" class="form-control" placeholder="Email Address" required autofocus />
+                    </form>
+                </div>
+                <div class="modal-footer text-center">
+                  <button type="button" class="btn btn-dark">Reset Password</button>
+                </div>
+              </div>
+            </div>
+          </div>
 </body>
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

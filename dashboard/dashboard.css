@@ -107,10 +107,12 @@ body {
   font-size: 12pt;
 }
 
-ion-icon {
+.icon {
   vertical-align: middle;
-  font-size: 24px;
+  width: 24px;
+  height: 24px;
   margin-right: 5px;
+  user-select: none;
 }
 
 .text {
@@ -155,10 +157,50 @@ a {
   border-radius: 64px;
   margin: auto;
   display: block;
+  pointer-events: none;
 }
 
 .profilename {
   margin-top: 10px;
   font-size: 12pt;
   font-weight: 500;
+}
+
+label {
+  font-weight: 500;
+}
+
+#walleticon {
+  font-size: 64px;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+#walletbalance {
+display: inline-block;
+font-size: 28pt;
+vertical-align: middle;
+}
+
+.material-icons-outlined {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.sidebar .nav-link.active.active {
+  background-color: rgb(240,240,240);
+  color: teal;
+}
+
+.sidebar .nav-link {
+  border-radius: 5px;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(0,128,128, 0.1);
+}
+
+.card-img-top {
+  pointer-events: none;
 }

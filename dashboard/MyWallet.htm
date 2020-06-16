@@ -4,35 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>My Wallet</title>
-
+  <title>Subscriptions</title>
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <!-- Ion Icons -->
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <!-- Custom styles for this wireframe -->
   <link href="dashboard.css" rel="stylesheet">
-
-  <style>
-    #walleticon {
-        width: 64px;
-        height: 64px;
-        display: inline-block;
-        margin-right: 10px;
-        vertical-align: middle;
-    }
-
-    #walletbalance {
-      display: inline-block;
-      font-size: 28pt;
-      vertical-align: middle;
-    }
-
-    label {
-      font-weight: 500;
-    }
-  </style>
-
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 </head>
 
@@ -44,11 +21,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <b class=" mr-0 w-100 px-3" style="color: white; font-size: 14pt; font-weight: 500;">My Wallet</b>
-    <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap">
-        <a class="nav-link" href="#"><ion-icon name="log-out-outline"></ion-icon><span class="text">Logout</span></a>
-      </li>
-    </ul>
+    
   </nav>
 
   <div class="container-fluid">
@@ -69,40 +42,40 @@
             </a>
           </h6>
         
-         <ul class="nav flex-column" id="navigation">
+          <ul class="nav flex-column" id="navigation">
             <li class="nav-item">
               <a class="nav-link" href="Subscriptions.htm">
-                <ion-icon name="bookmarks-outline"></ion-icon>
+                <i class="material-icons-outlined icon">bookmarks</i>
                 <span class="text">Subscriptions</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="PaymentHistory.htm">
-                <ion-icon name="time-outline"></ion-icon>
+                <i class="material-icons-outlined icon">history</i>
                 <span class="text">Payment History</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="MyReferrals.htm">
-                <ion-icon name="people-outline"></ion-icon>
+                <i class="material-icons-outlined icon">people</i>
                 <span class="text">My Referrals</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="MyWallet.htm">
-                <ion-icon name="wallet-outline"></ion-icon>
+                <i class="material-icons-outlined icon">account_balance_wallet</i>
                 <span class="text">My Wallet</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="ProfileSettings.htm">
-                <ion-icon name="person-circle-outline"></ion-icon>
+                <i class="material-icons-outlined icon">account_circle</i>
                 <span class="text">Profile Settings</span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../login.htm">
-                <ion-icon name="log-out-outline"></ion-icon>
+                <i class="material-icons-outlined icon">exit_to_app</i>
                <span class="text">Logout</span>
               </a>
             </li>
@@ -127,12 +100,12 @@
             <div class="row" style="margin-bottom: 100px;">
               <div class="col-sm" style="margin-top: 20px;">
                 <h4>Wallet Balance</h3>
-                <ion-icon id="walleticon" name="wallet-outline"></ion-icon>
+                  <i class="material-icons-outlined" id="walleticon">account_balance_wallet</i>
                 <div id="walletbalance">
                   ₹ 500
                 </div>
                 <div id="walletrecharge" style="padding-top: 20px;">
-                  <button class="btn btn-outline-success"><ion-icon name="add-outline"></ion-icon>Add Balance</button>
+                  <button class="btn btn-outline-success"><i class="material-icons-outlined">add</i>Add Balance</button>
                 </div>
               </div>
               <div class="col-sm-8" style="margin-top: 20px;">
@@ -175,7 +148,7 @@
                   <input type="text" class="form-control" id="BranchName" />
                 </div>
                 <div class="form-group text-right">
-                  <button class="btn btn-outline-success"><ion-icon name="checkmark-outline"></ion-icon>Update Details</button>
+                  <button class="btn btn-outline-success"><i class="material-icons-outlined">save</i>Update Details</button>
                 </div>
               </div>
             </div>

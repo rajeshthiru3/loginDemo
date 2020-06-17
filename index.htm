@@ -9,7 +9,7 @@
             font-weight: 500;
         }
 
-        
+
         ion-icon {
             width: 24px;
             height: 24px;
@@ -66,7 +66,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="loginModalLongTitle">
-                            <ion-icon id="backButton" name="caret-back-circle-outline" onclick="showLoginForm()"></ion-icon>
+                            <ion-icon id="backButton" name="caret-back-circle-outline" onclick="showLoginForm()">
+                            </ion-icon>
                             <span id="titleText">Log In</span>
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -85,7 +86,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-success" style="width: 30%">Next &#187;</button>
+                                            <button type="submit" class="btn btn-success" style="width: 30%">Next
+                                                &#187;</button>
                                         </div>
                                     </form>
                                 </div>
@@ -103,8 +105,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-success" style="width: 30%">Log In</button>
-                                            <button type="button" class="btn btn-link" data-target="#forgotPasswordModal" data-toggle="modal">Forgot Password</button>
+                                            <button type="submit" class="btn btn-success" style="width: 30%">Log
+                                                In</button>
+                                            <button type="button" class="btn btn-link"
+                                                data-target="#forgotPasswordModal" data-toggle="modal" onclick="resetEmail.value= emailAddressField.value">Forgot
+                                                Password</button>
                                         </div>
                                     </form>
                                 </div>
@@ -128,16 +133,16 @@
         <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-lg  modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <div class="mx-auto modal-title container" style="text-align: center">
-                                <h5 class="col-12 modal-title text-center " id="signUpModalLabel">Registration</h5>
-                            </div>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="mx-auto modal-title container" style="text-align: center">
+                            <h5 class="col-12 modal-title text-center " id="signUpModalLabel">Registration</h5>
                         </div>
-                        <form>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form>
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row">
@@ -214,31 +219,44 @@
                                 onclick="alert('Sign Up Complete. Check your mail.')">Sign Up</button>
                         </div>
                     </form>
-                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModal">
+        <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog"
+            aria-labelledby="forgotPasswordModal">
             <div class="modal-dialog modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Forgot Password</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                    <form class="centerbox form-group">
-                        <label for="fpEmailAddress">Enter the email address below to reset password:</label>
-                        <input type="email" id="fpEmailAddress" class="form-control" placeholder="Email Address" required autofocus />
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Forgot Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form onsubmit="showConfirmation(event)">
+                        <div class="modal-body">
+                            <div class="centerbox form-group" id="resetPasswordForm">
+                                <label for="fpEmailAddress">Enter the email address below to reset password:</label>
+                                <input type="email" id="resetEmail" class="form-control" placeholder="Email Address"
+                                    required autofocus />
+                            </div>
+                            <div class="row" id="emailConfirmationText" style="display: none;">
+                                <div class="col">
+                                    Check your email for a link to reset your password. If it doesn’t appear within a
+                                    few
+                                    minutes, check your spam folder.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer text-center">
+                            <button type="submit" class="btn btn-dark" id="resetPasswordButton">Reset Password</button>
+                            <button type="button" class="btn btn-success btn-block" id="emailConfirmationButton"
+                                style="display: none;" onclick="window.open('https://www.gmail.com')">Go to Gmail</button>
+                        </div>
                     </form>
                 </div>
-                <div class="modal-footer text-center">
-                  <button type="button" class="btn btn-dark">Reset Password</button>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
 </body>
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -250,5 +268,14 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
+<script language="javascript">
+    function showConfirmation(event) {
+        event.preventDefault();
+        resetPasswordForm.style.display = "none";
+        resetPasswordButton.style.display = "none";
+        emailConfirmationButton.style.display = "initial";
+        emailConfirmationText.style.display = "initial";
+    }
+</script>
 
 </html>

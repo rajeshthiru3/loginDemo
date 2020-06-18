@@ -1,16 +1,16 @@
 <html>
 
 <head>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>LETFIX Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
     <style>
         .form-group>label {
             font-weight: 500;
         }
 
 
-        ion-icon {
+        .icon {
             width: 24px;
             height: 24px;
             vertical-align: middle;
@@ -25,6 +25,9 @@
             vertical-align: middle;
         }
 	
+		form {
+			margin-bottom: 0;
+		}
     </style>
 
     <script language="javascript">
@@ -48,9 +51,6 @@
         }
 
     </script>
-
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-
 </head>
 
 <body>
@@ -67,8 +67,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="loginModalLongTitle">
-                            <ion-icon id="backButton" name="caret-back-circle-outline" onclick="showLoginForm()">
-                            </ion-icon>
+                           <i id="backButton" onclick="showLoginForm()" class="material-icons-outlined icon">arrow_back</i>
                             <span id="titleText">Log In</span>
                         </h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

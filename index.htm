@@ -24,6 +24,7 @@
         span {
             vertical-align: middle;
         }
+	
     </style>
 
     <script language="javascript">
@@ -223,7 +224,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog"
+        <div class="modal modal-stack fade" id="forgotPasswordModal" tabindex="-1" role="dialog"
             aria-labelledby="forgotPasswordModal">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -276,6 +277,16 @@
         emailConfirmationButton.style.display = "initial";
         emailConfirmationText.style.display = "initial";
     }
+	
+	$(document).ready(function () {
+        $(document).on('show.bs.modal', '.modal', function (event) {
+            var zIndex = 1040 + (10 * $('.modal:visible').length);
+            $(this).css('z-index', zIndex);
+            setTimeout(function() {
+                $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+            }, 0);
+        });
+	});
 </script>
 
 </html>

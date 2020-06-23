@@ -82,8 +82,8 @@
         </div>
       </nav>
 
-      <main role="main" class="col-md-8 ml-auto col-lg-10 px-md-4">
-          <div class="row" style="padding: 10%;">  
+      <main role="main" class="col-md-8 ml-auto col-lg-10 px-md-4" >
+          <div class="row" style="padding: 10%;" id="PaymentHistoryPanel">  
             <div class="w-100">
               <table class="table" id="sample">
                 <thead>
@@ -96,23 +96,7 @@
                     <th>Package</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Siva</td>
-                    <td>failure</td>
-                    <td>600</td>
-                    <td>12:53:42 PM, Jun 15, 2020</td>
-                    <td>IPT on Advanced Web Development</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>sai</td>
-                    <td>failure</td>
-                    <td>600</td>
-                    <td>12:53:42 PM, Jun 15, 2020</td>
-                    <td>IPT on Advanced Web Development</td>
-                  </tr>
+                <tbody  id="PaymentHistory">
                 </tbody>
               </table>
             </div>
@@ -126,12 +110,8 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
-  
-  <script language="javascript">
-    $(document).ready( function () {
-    $('#sample').DataTable();
-} );
-  </script>
+  <script src="js/PaymentHistory.js"></script>
+ 
 </body>
 
 </html>

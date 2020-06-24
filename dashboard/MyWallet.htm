@@ -107,7 +107,7 @@
                 <h4>Wallet Balance</h3>
                   <i class="material-icons-outlined" id="walleticon">account_balance_wallet</i>
                   <div id="walletbalance">
-                    ₹ 500
+                    
                   </div>
                   <div id="walletrecharge" style="padding-top: 20px;">
                     <button class="btn btn-outline-success" data-toggle="modal" data-target="#addWalletBalanceModal"><i
@@ -118,6 +118,7 @@
                 <h4>Wallet Transactions</h3>
                   <table id="walletTransactionsTable" class="table">
                     <thead>
+					
                       <tr>
                         <th>S. No.</th>
                         <th>Date</th>
@@ -126,6 +127,7 @@
                         <th>Status</th>
                       </tr>
                     </thead>
+					<tbody id="walletTransactionsData"></tbody>
                   </table>
               </div>
             </div>
@@ -146,8 +148,8 @@
                   <input type="text" class="form-control" id="BankName" />
                 </div>
                 <div class="form-group">
-                  <label for="IFSC Code">IFSC Code</label>
-                  <input type="text" class="form-control" id="IFSC Code" />
+                  <label for="IFSCCode">IFSC Code</label>
+                  <input type="text" class="form-control" id="IFSCCode" />
                 </div>
                 <div class="form-group">
                   <label for="BranchName">Branch Name</label>
@@ -166,12 +168,13 @@
             <table id="withdrawalsTable" class="table">
               <thead>
                 <tr>
-                  <th>S. No.</th>
+                  <th>S.No.</th>
                   <th>Date</th>
                   <th>Amount</th>
                   <th>Status</th>
                 </tr>
               </thead>
+			  <tbody id="withdrawalsData"></tbody>
             </table>
           </div>
         </div>
@@ -229,14 +232,13 @@
     src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
 
   <script language="javascript">
-    $(document).ready(function () {
-      $('#walletTransactionsTable, #withdrawalsTable').DataTable();
-    });
-
+    
     $(".addamount").on("click", function(event) {
       addBalanceAmount.value = parseInt(event.target.innerHTML.substr(2));
     });
   </script>
+  
+  <script src="js/MyWallet.js"></script>
 </body>
 
 </html>

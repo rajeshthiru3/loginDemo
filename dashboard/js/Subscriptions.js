@@ -11,7 +11,7 @@ function getSubscriptions() {
 			buildSubscriptionCards(json);
 		}
 	};
-	xhttp.open("GET", "js/subscriptions.json", true);
+	xhttp.open("GET", "js/Subscriptions.json", true);
 	xhttp.setRequestHeader('Cache-Control', 'no-cache');
 	xhttp.send();
 }

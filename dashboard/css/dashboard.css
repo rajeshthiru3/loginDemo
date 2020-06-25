@@ -370,3 +370,17 @@ a:hover {
 	position: absolute;
 	z-index: -1;   
   }
+
+.btn-link {
+	color: #08a8b0;
+}
+
+.btn-link:hover {
+	color: teal;
+}
+
+.btn-link:active,
+.btn-link:focus {
+	border-color: #077980 !important;
+	box-shadow: 0 0 0 0.2rem rgba(0, 128, 128, 0.3) !important;
+}

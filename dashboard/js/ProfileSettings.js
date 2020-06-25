@@ -19,7 +19,7 @@ function getProfileSettings() {
 function viewDetails(ProfileSettings_json) {
 	var info = ProfileSettings_json["Basic Information"];
 	var username = info.username;
-	var email = info.useremail;
+	var email = info.email;
 	var phone = info.phone;
 	var collegeName = info.college;
 	var yearOfCompletion = info.YDC;

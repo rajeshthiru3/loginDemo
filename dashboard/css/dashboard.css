@@ -1,6 +1,7 @@
 body {
 	font-size: 0.875rem;
 	user-select: none;
+	height: 100vh;
 }
 
 .feather {
@@ -77,8 +78,8 @@ body {
 	padding-top: 0.75rem;
 	padding-bottom: 0.75rem;
 	font-size: 1rem;
-	background-color: rgba(0, 0, 0, 0.25);
-	box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+	background-color: #333333;
+	box-shadow: inset -1px 0 0 #333333;
 }
 
 .navbar .navbar-toggler {
@@ -190,7 +191,7 @@ label {
 
 .sidebar .nav-link.active.active {
 	background-color: rgb(240, 240, 240);
-	color: teal;
+	color: #08a8b0;
 }
 
 .sidebar .nav-link {
@@ -219,5 +220,153 @@ label {
 #subscriptionsPanel > .card > .card-img-top {
 	height: 200px;
 	object-fit: cover;
-    overflow: hidden;
+	overflow: hidden;
 }
+
+/* LETFIX Theme for Bootstrap */
+
+.btn-outline-letfix {
+	color: #08a8b0;
+	border-color: #08a8b0;
+}
+
+.btn-outline-letfix:hover {
+	color: white;
+	border-color: #08a8b0;
+	background-color: #08a8b0;
+}
+
+.btn-outline-letfix:active,
+.btn-outline-letfix:focus {
+	color: #fff;
+	background-color: #08a8b0 !important;
+	border-color: #08a8b0 !important;
+	box-shadow: 0 0 0 0.2rem rgba(0, 128, 128, 0.3) !important;
+}
+
+.btn-letfix {
+	color: white;
+	background-color: #08a8b0;
+	border-color: #08a8b0;
+}
+
+.btn-letfix:hover {
+	color: white;
+	border-color: #077980;
+	background-color: #077980;
+}
+
+.btn-letfix:active,
+.btn-letfix:focus {
+	color: #fff;
+	background-color: #077980 !important;
+	border-color: #077980 !important;
+	box-shadow: 0 0 0 0.2rem rgba(0, 128, 128, 0.3) !important;
+}
+
+.btn-letfix-gray {
+	color: white;
+	background-color: #545454;
+	border-color: #545454;
+}
+
+.btn-letfix-gray:hover {
+	color: white;
+	border-color: #434343;
+	background-color: #434343;
+}
+
+.btn-letfix-gray:active,
+.btn-letfix-gray:focus {
+	color: #fff;
+	background-color: #545454 !important;
+	border-color: #545454 !important;
+	box-shadow: 0 0 0 0.2rem rgba(84, 84, 84, 0.3) !important;
+}
+
+.form-control:focus {
+	box-shadow: 0 0 0 0.2rem rgba(0, 128, 128, 0.3) !important;
+}
+
+.custom-select:focus {
+	box-shadow: 0 0 0 0.2rem rgba(0, 128, 128, 0.3) !important;
+}
+
+.custom-file-input:focus {
+	border-color: #08a8b0 !important;
+	box-shadow: 0 0 0 0.2rem rgba(0, 128, 128, 0.3) !important;
+}
+
+a {
+	color: #08a8b0;
+}
+
+a:hover {
+	color: teal;
+}
+
+.bg-dark {
+	background-color: #545454 !important;
+}
+
+.checkbox-letfix {
+	
+  }
+  
+  .checkbox-letfix label {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #08a8b0;
+	border-radius: 4px; 
+  }
+  
+  .checkbox-letfix label:after {
+	content: '';
+	width: 9px;
+	height: 5px;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #fcfff4;
+	border-top: none;
+	border-right: none;
+	background: transparent;
+	opacity: 0;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+  }
+  
+  .checkbox-letfix label:hover::after {
+	opacity: 0.3;
+  }
+  
+  .checkbox-letfix input[type=checkbox] {
+	visibility: hidden;
+  }
+  
+  .checkbox-letfix input[type=checkbox]:checked + label:after {
+	opacity: 1;
+  }
+  /* end .checkbox-letfix */
+  
+  .label-text {
+	position: relative;
+	left: 10px;
+  }
+
+  
+#maincontainer::after {
+	content: "";
+	background: url(../img/bg.jpg);
+	opacity: 0.2;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;   
+  }

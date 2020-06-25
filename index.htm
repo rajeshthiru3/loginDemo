@@ -2,6 +2,8 @@
 
 <head>
     <title>LETFIX Login</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -56,9 +58,9 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"
-        style="background-color: white !important;">
-        <a class="navbar-brand" style="padding-left: 50px; font-size: 12pt; height: 100%; width: 90%;"
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow bor"
+        style="background-color: white !important; border: 0;">
+        <a class="navbar-brand" style="color: black; border: 0;background: white; padding-left: 50px; font-size: 12pt; height: 100%; width: 60%;"
             href="#"><b>LETFIX Technologies</b></a>
         <button type="button" class="btn btn-letfix" data-toggle="modal" style="margin-right: 60px;"
             data-target="#loginModal">
@@ -153,7 +155,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form>
+                    <form onsubmit="event.preventDefault(); alert('Sign Up Complete. Check your mail.')">
                         <div class="modal-body">
                             <div class="container">
                                 <div class="row">
@@ -217,19 +219,16 @@
                                         </div>
 
                                         <div class="custom-control custom-checkbox form-group">
-                                            <input type="checkbox" class="custom-control-input" id="tocAgreeField">
-                                            <label class="custom-control-label" for="tocAgreeField">I agree to the <a
-                                                    href="#">Terms and Conditions.</a></label>
+                                            <input type="checkbox" class="custom-control-input" id="tocAgreeField" required>
+                                            <label class="custom-control-label" for="tocAgreeField">I agree to the <a href="#">Terms and Conditions.</a></label>
                                         </div>
-
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-                        <div class="mx-auto modal-footer" style="text-align:center; width: 500px;">
-                            <button type="button" class="btn btn-letfix btn-lg btn-block"
-                                onclick="alert('Sign Up Complete. Check your mail.')">Sign Up</button>
+                        <div class="mx-auto modal-footer" style="text-align:center; width: 100%;">
+                            <button type="submit" class="btn btn-letfix btn-block">Sign Up</button>
                         </div>
                     </form>
                 </div>
